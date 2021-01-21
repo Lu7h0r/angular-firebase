@@ -1,6 +1,8 @@
 # CrudFirebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+Puedes ver esta app en linea dando clic en el siguiebte Badge
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4f71b9c2-d90e-45bc-86a2-ff55cf4dd26d/deploy-status)](https://empladosfbase.netlify.app/)
 
 ## Development server
 
