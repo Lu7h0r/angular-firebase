@@ -1,0 +1,46 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Ingreso</th>
+      <th>Contrato</th>
+      <th># Documento</th>
+      <th>EPS</th>
+      <th>ARL</th>
+      <th>FONDO PENSIONES</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of empleados$ | async">
+      <th scope="row">{{ item.nombreCompleto }}</th>
+      <td>{{ item.email }}</td>
+      <td>{{ item.ingreso }}</td>
+      <td>{{ item.tipoDeContrato }}</td>
+      <td>{{ item.numeroDocumento }}</td>
+      <td>{{ item.eps }}</td>
+      <td>{{ item.arl }}</td>
+      <td>{{ item.fondoPensiones }}</td>
+      <td role="group">
+        <div
+          class="btn-toolbar"
+          role="toolbar"
+          aria-label="Toolbar with button groups"
+        >
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-outline-primary mx-1" (click)="accionVer(item)">
+              Ver
+            </button>
+            <button type="button" class="btn btn-outline-warning mx-1" (click)="accionEditar(item)">
+              Editar
+            </button>
+            <button type="button" class="btn btn-outline-danger mx-1" (click)="accionEliminar(item.id)">
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

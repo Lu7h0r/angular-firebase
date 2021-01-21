@@ -1,0 +1,189 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card mb-3">
+      <h3 class="card-header">Editar empleado</h3>
+      <div class="card-body">
+        <form (ngSubmit)="guardarEditar()" [formGroup]="empleadoForm">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Nombre completo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombreCompleto"
+                  [class]="esUnCampoValido('nombreCompleto')"
+                />
+                <div
+                  *ngIf="empleadoForm.get('nombreCompleto').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Correo electronico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="email"
+                  [class]="esUnCampoValido('email')"
+                />
+                <div
+                  *ngIf="empleadoForm.get('email').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+                <div
+                  *ngIf="empleadoForm.get('email').errors.pattern"
+                  class="invalid-feedback"
+                >
+                  Debes ingresar un correo valido!
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Fecha de ingrerso</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  formControlName="ingreso"
+                  [class]="esUnCampoValido('ingreso')"
+                  placeholder="DD/MM/AA"
+                />
+                <div
+                  *ngIf="empleadoForm.get('ingreso').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Tipo de contrato</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="tipoDeContrato"
+                  [class]="esUnCampoValido('tipoDeContrato')"
+                  placeholder="Directo o Temporal"
+                />
+                <div
+                  *ngIf="empleadoForm.get('tipoDeContrato').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label># de documento</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="numeroDocumento"
+                  [class]="esUnCampoValido('numeroDocumento')"
+                />
+                <div
+                  *ngIf="empleadoForm.get('numeroDocumento').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group">
+                <label>EPS</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="eps"
+                  [class]="esUnCampoValido('eps')"
+                />
+
+                <div
+                  *ngIf="empleadoForm.get('eps').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label>ARL</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="arl"
+                  [class]="esUnCampoValido('arl')"
+                />
+                <div
+                  *ngIf="empleadoForm.get('arl').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label>Fondo de pensiones</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="fondoPensiones"
+                  [class]="esUnCampoValido('fondoPensiones')"
+                />
+                <div
+                  *ngIf="empleadoForm.get('fondoPensiones').errors.required"
+                  class="invalid-feedback"
+                >
+                  Campo requerido*, puedes completarlo?
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div
+              class="btn-toolbar"
+              role="toolbar"
+              aria-label="Toolbar with button groups"
+            >
+              <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="submit" class="btn btn-outline-warning mx-1">
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 offset-md-4">
+        <button
+          type="button"
+          class="btn btn-block btn-outline-info"
+          (click)="accionRegresar()"
+        >
+          Regresar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

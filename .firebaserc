@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "crud-empleados-2f28c": {
+      "hosting": {
+        "crud-firebase": [
+          "crud-empleados-2f28c"
+        ]
+      }
+    }
+  }
+}
